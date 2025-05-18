@@ -119,6 +119,6 @@ async def process_voice_chat(request: Request, file: UploadFile = File(...)):
         except Exception as e:
             logger.warning(f"[{request_id}] Failed to clean up files: {str(e)}")
 
-if _name_ == "_main_":
+if __name__ == "_main_":
     logger.info("Starting Voice AI Assistant API server")
     uvicorn.run(app, host="0.0.0.0", port=8000)
